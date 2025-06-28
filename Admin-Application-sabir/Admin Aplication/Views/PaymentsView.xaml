@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="AdminApplication.Views.PaymentsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:AdminApplication.Views">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10">
+            <Button Content="Add Payment" Margin="0,0,10,0"/>
+            <Button Content="Edit" Margin="0,0,10,0"/>
+            <Button Content="Delete"/>
+        </StackPanel>
+
+        <DataGrid Grid.Row="1" AutoGenerateColumns="False" Margin="10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Reservation" Binding="{Binding Reservation.Id}"/>
+                <DataGridTextColumn Header="Amount" Binding="{Binding Amount}"/>
+                <DataGridTextColumn Header="Date" Binding="{Binding PaymentDate}"/>
+                <DataGridTextColumn Header="Method" Binding="{Binding PaymentMethod}"/>
+                <DataGridTextColumn Header="Status" Binding="{Binding Status}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>
